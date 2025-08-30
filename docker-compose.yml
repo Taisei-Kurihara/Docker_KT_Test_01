@@ -30,6 +30,16 @@ services:
       - mysql_data:/var/lib/mysql
     ports:
       - "3306:3306"
+  ssh:
+    image: ubuntu:22.04
+    container_name: ssh_server
+    ports:
+      - "2222:22"  # ホスト2222 → コンテナ22
+    volumes:
+      - ./ssh_home:/home/dev  # 必要に応じて共有ディレクトリ
+    command: /usr/sbin/sshd -D
+    build:
+      context: ./ssh  # 自作 Dockerfile がある場合
 
 volumes:
   mysql_data:

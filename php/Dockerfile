@@ -1,33 +1,5 @@
 FROM php:7.3-apache
 
-# # SSH
-
-# # 必要なパッケージと openssh-server
-# RUN apt-get update && apt-get install -y \
-#     vim \
-#     default-mysql-client \
-#     openssh-server \
-#   && rm -rf /var/lib/apt/lists/*
-
-# # SSH サーバー設定
-# RUN mkdir /var/run/sshd \
-#     && echo 'root:root' | chpasswd \
-#     && sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
-#     && sed -i 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' /etc/pam.d/sshd
-
-# # 22 番ポートを公開
-# EXPOSE 22
-
-# # SSH サービスを起動
-# CMD ["/usr/sbin/sshd", "-D"]
-
-# #ホスト名: localhost
-# #ポート: 2222
-# #ユーザー名: root
-# #パスワード: root
-
-
-
 # ============================
 # 共通: 本番・開発で必要な部分
 # ============================

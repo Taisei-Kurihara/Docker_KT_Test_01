@@ -15,6 +15,6 @@ CREATE TABLE IF NOT EXISTS table_Neko (
     example_message VARCHAR(255)
 );
 
-insert into table_Neko (id, name, Age, example_message) values (1, 'sham', 10, 'message1');
-insert into table_Neko (id, name, Age, example_message) values (2, 'Arabia', 20, 'message2');
-insert into table_Neko (id, name, Age, example_message) values (3, 'tiger', 30, 'message3');
+insert into table_Neko (id, name, Age, example_message) values (1, 'sham', 5, 'message1');
+insert into table_Neko (id, name, Age, example_message) values (2, 'Arabia', 4, 'message2');
+insert into table_Neko (id, name, Age, example_message) values (3, 'tiger', 2, 'message3');

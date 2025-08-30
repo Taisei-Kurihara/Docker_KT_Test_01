@@ -7,13 +7,15 @@ services:
       dockerfile: Dockerfile
     container_name: php_app
     volumes:
-      - ./src:/var/www/html     # PHP ファイルをマウント
+      - ./src:/var/www/html
       - ./php/php.ini:/usr/local/etc/php/php.ini
       - ./php/php_apache2.conf:/etc/apache2/sites-enabled/000-default.conf
     ports:
       - "80:80"
+      - "2222:22"
     depends_on:
       - mysql
+
 
   mysql:
     build:

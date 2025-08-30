@@ -12,10 +12,8 @@ services:
       - ./php/php_apache2.conf:/etc/apache2/sites-enabled/000-default.conf
     ports:
       - "80:80"
-      - "2222:22"
     depends_on:
       - mysql
-
 
   mysql:
     build:
@@ -28,7 +26,7 @@ services:
       MYSQL_USER: data_user
       MYSQL_PASSWORD: data
     volumes:
-      - ./mysql/Initialize.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./mysql/initialize.sql:/docker-entrypoint-initdb.d/init.sql
       - mysql_data:/var/lib/mysql
     ports:
       - "3306:3306"
